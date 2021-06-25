@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redux</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.0/redux.js"></script>
+</head>
+<body>
+    <style>
+        .container{
+            border: 5px solid #000;
+        }
+    </style>
+    <div id="red"></div>
+    <div id="blue"></div>
+    <script>
+        function reducer(state, action) {
+            console.log(state, action)
+            if(state === undefined){ // 초기화를 위해 최초로 실행되는 reducer에 대한 호출 - 초기값 세팅
+                return { color: 'yellow'}; // 초기 state값
+            }
+            let newState;
+            if(action.type === 'CHANGE_COLOR'){
+               newState = Object.assign({}, state, { color: action.color });
+            }
+            return newState;
+        }
+        let store = Redux.createStore(
+            reducer,
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+            );
+        // console.log(store.getState())
+
+        function red() {
+            let state = store.getState();
+            document.querySelector('#red').innerHTML = `
+                <div class="container" id="component_red" style="background-color:${state.color}">
+                    <h1>red</h1>
+                    <input type="button" value="fire" onclick="
+                    store.dispatch({type: 'CHANGE_COLOR', color: 'red'})
+                    " />
+                </div>
+            `
+        }
+        store.subscribe(red); // state가 바뀔때마다 red 함수 호출
+        red();
+
+        function blue() {
+            let state = store.getState();
+            document.querySelector('#blue').innerHTML = `
+                <div class="container" id="component_blue" style="background-color:${state.color}">
+                    <h1>blue</h1>
+                    <input type="button" value="fire" onclick="
+                    store.dispatch({type: 'CHANGE_COLOR', color: 'blue'})
+                    " />
+                </div>
+            `
+        }
+        store.subscribe(blue); // state가 바뀔때마다 red 함수 호출
+        blue();
+    </script>
+</body>
+</html>
