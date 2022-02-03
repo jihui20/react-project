@@ -20,6 +20,8 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
+            // preset-react: 마크업은 아니지만 마크업과 똑같은 구조를 갖고 있는 문법을
+            // 리액트가 갖고있는 'createElement'라는 함수 호출 구문으로 바꿔주는 역할
           },
         },
       },
