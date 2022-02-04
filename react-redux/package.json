@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/jihui20/react-project#readme",
   "dependencies": {
+    "colors": "^1.4.0",
     "webpack": "^5.68.0"
   },
   "devDependencies": {
