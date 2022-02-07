@@ -15,3 +15,10 @@
 4. redux: 제로초 리덕스 강의 보며 스터디 진행
 
 5. react-redux, javascript: 패스트캠퍼스 '김민태의 프론트엔드 아카데미' 강의 들으며 스터디 진행중
+
+### 사용 기술
+
+**React**
+**JavaScript**
+**Html5**
+**Css3**
