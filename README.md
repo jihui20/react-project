@@ -18,7 +18,7 @@
 
 ### 사용 기술
 
-**React**
-**JavaScript**
-**Html5**
+**React**  
+**JavaScript**  
+**Html5**  
 **Css3**
