@@ -1,3 +1,5 @@
+// 타입스크립트
+
 type Centimeter = number;
 type RainbowColor =
   | 'red'
