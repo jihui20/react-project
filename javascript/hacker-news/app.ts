@@ -39,10 +39,10 @@ function makeFeeds(feeds) {
 }
 
 function updateView(html) {
-  if (container) {
-    container.innerHTML = html;
-  } else {
+  if (!container) {
     console.log('최상위 컨테이너가 없오!');
+  } else {
+    container.innerHTML = html;
   }
 }
 
